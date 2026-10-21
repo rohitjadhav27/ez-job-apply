@@ -1,0 +1,17 @@
+{% extends "base.html.j2" %}
+{% block title %}Log in · Ez Apply{% endblock %}
+{% block content %}
+<form class="card" method="post" action="/login">
+  <h1>Log in</h1>
+  <p class="muted">Pick your name and enter your password.</p>
+  {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+  <input type="hidden" name="next" value="{{ next }}">
+  <label for="person">Who are you</label>
+  <select id="person" name="person" required>
+    {% for p in people %}<option value="{{ p.id }}">{{ p.name.split(' ')[0] }}</option>{% endfor %}
+  </select>
+  <label for="password">Password</label>
+  <input id="password" type="password" name="password" autocomplete="current-password" required>
+  <div class="actions"><button class="btn btn-primary" type="submit">Log in</button></div>
+</form>
+{% endblock %}

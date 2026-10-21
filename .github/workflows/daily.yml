@@ -1,0 +1,80 @@
+name: Daily digest
+
+on:
+  workflow_dispatch:
+    inputs:
+      person:
+        description: "Only run for this profile id (blank = everyone)"
+        type: string
+        required: false
+        default: ""
+      force:
+        description: "Ignore the already-sent-today check"
+        type: boolean
+        required: false
+        default: false
+  # Uncomment after configuring secrets; or trigger via cron-job.org - see README.
+  # schedule:
+  #   - cron: "0 3 * * *" # 08:30 IST backup; cron-job.org dispatches at 08:00 IST
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
+      # secrets
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      APP_SECRET: ${{ secrets.APP_SECRET }}
+      APP_BASE_URL: ${{ secrets.APP_BASE_URL }}
+      LINK_TTL_HOURS: ${{ secrets.LINK_TTL_HOURS }}
+      LLM_GEMINI_API_KEY: ${{ secrets.LLM_GEMINI_API_KEY }}
+      LLM_GROQ_API_KEY: ${{ secrets.LLM_GROQ_API_KEY }}
+      LLM_GATEWAY_API_KEY: ${{ secrets.LLM_GATEWAY_API_KEY }}
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+      SENDER_EMAIL: ${{ secrets.SENDER_EMAIL }}
+      SENDER_APP_PASSWORD: ${{ secrets.SENDER_APP_PASSWORD }}
+      # variables (empty = app default)
+      MIN_MATCH_PCT: ${{ vars.MIN_MATCH_PCT }}
+      MAX_AGE_DAYS: ${{ vars.MAX_AGE_DAYS }}
+      JUDGE_TOP_N: ${{ vars.JUDGE_TOP_N }}
+      MAX_ITEMS_PER_DIGEST: ${{ vars.MAX_ITEMS_PER_DIGEST }}
+      SEND_EMPTY_DIGEST: ${{ vars.SEND_EMPTY_DIGEST }}
+      LLM_PROVIDERS: ${{ vars.LLM_PROVIDERS || 'gemini,groq' }}
+      LLM_GEMINI_BASE_URL: ${{ vars.LLM_GEMINI_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta/openai/' }}
+      LLM_GEMINI_MODEL: ${{ vars.LLM_GEMINI_MODEL || 'gemini-2.5-flash' }}
+      LLM_GEMINI_MIN_INTERVAL_SECONDS: ${{ vars.LLM_GEMINI_MIN_INTERVAL_SECONDS }}
+      LLM_GROQ_BASE_URL: ${{ vars.LLM_GROQ_BASE_URL || 'https://api.groq.com/openai/v1' }}
+      LLM_GROQ_MODEL: ${{ vars.LLM_GROQ_MODEL || 'openai/gpt-oss-120b' }}
+      LLM_GROQ_MIN_INTERVAL_SECONDS: ${{ vars.LLM_GROQ_MIN_INTERVAL_SECONDS }}
+      LLM_GATEWAY_BASE_URL: ${{ vars.LLM_GATEWAY_BASE_URL }}
+      LLM_GATEWAY_MODEL: ${{ vars.LLM_GATEWAY_MODEL }}
+      LLM_GATEWAY_MIN_INTERVAL_SECONDS: ${{ vars.LLM_GATEWAY_MIN_INTERVAL_SECONDS }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.11"
+          enable-cache: true
+      - uses: actions/cache@v4
+        with:
+          path: /home/runner/.cache/fastembed
+          key: fastembed-bge-small-en-v1.5
+      - run: uv sync --frozen --extra pipeline
+      - run: uv run python scripts/migrate.py
+      - name: Run pipeline
+        env:
+          INPUT_PERSON: ${{ inputs.person }}
+          INPUT_FORCE: ${{ inputs.force }}
+        run: |
+          args=()
+          if [ -n "$INPUT_PERSON" ]; then args+=(--person "$INPUT_PERSON"); fi
+          if [ "$INPUT_FORCE" = "true" ]; then args+=(--force); fi
+          uv run python -m ezapply.pipeline.run "${args[@]}"

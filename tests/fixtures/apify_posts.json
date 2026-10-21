@@ -1,0 +1,191 @@
+[
+ {
+  "type": "post",
+  "id": "7000000000000000001",
+  "linkedinUrl": "https://www.linkedin.com/posts/jane-recruiter-1a2b3c_hiring-activity-7000000000000000001-AbCd?utm_source=share&utm_medium=member_desktop",
+  "content": "Hiring: Account Manager, B2B SaaS | Mumbai | 2-4 yrs\n\nWe are growing a small team and need someone who enjoys owning customer relationships after the contract is signed.\n\nResponsibilities\n- Onboard new customers and run regular reviews\n- Escalate and close issues\n- Pass feedback to product\n\nSend your CV to jane.recruiter@acme-example.org\n\n#Hiring #AccountManagement #MumbaiJobs",
+  "contentAttributes": [],
+  "author": {
+   "id": "ACoAAFAKE",
+   "universalName": null,
+   "publicIdentifier": "jane-recruiter-1a2b3c",
+   "type": "profile",
+   "name": "Jane Recruiter",
+   "linkedinUrl": "https://www.linkedin.com/in/jane-recruiter-1a2b3c",
+   "info": "Talent Partner at Acme Labs",
+   "website": null,
+   "websiteLabel": null,
+   "avatar": null,
+   "urn": "1",
+   "profileId": "ACoAAFAKE"
+  },
+  "postedAt": {
+   "timestamp": 1792496109568,
+   "date": "2026-10-20T11:35:09.568Z",
+   "postedAgoShort": "4h",
+   "postedAgoText": "4 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [],
+  "socialContent": {
+   "shareUrl": "https://www.linkedin.com/posts/jane-recruiter-1a2b3c_hiring-activity-7000000000000000001-AbCd?utm_source=share&utm_medium=member_desktop"
+  },
+  "comments": [],
+  "header": {
+   "text": null
+  },
+  "entityId": "7000000000000000001",
+  "shareUrn": "urn:li:share:7000000000000000001",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7000000000000000001",
+  "engagement": {
+   "id": "7518273602346180608",
+   "likes": 1,
+   "comments": 0,
+   "shares": 0,
+   "reactions": [
+    {
+     "type": "LIKE",
+     "count": 1
+    }
+   ]
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+   "sortBy": "date",
+   "page": 1,
+   "search": "hiring product manager Mumbai",
+   "postedLimit": "24h"
+  },
+  "article": null
+ },
+ {
+  "type": "post",
+  "id": "7000000000000000002",
+  "linkedinUrl": "https://www.linkedin.com/posts/acme-labs_hiring-activity-7000000000000000002-AbCd?utm_source=share&utm_medium=member_desktop",
+  "content": "Operations and CRM Associate wanted in Mumbai.\nAcme Labs is looking for someone to coordinate schedules, keep programmes on track and maintain our CRM. Freshers welcome.\nApply at careers@acme-example.org or message us.\n#Hiring #Operations #MumbaiJobs",
+  "contentAttributes": [
+   {
+    "start": 0,
+    "length": 10,
+    "type": "TEXT_LINK",
+    "hyperlink": null,
+    "textLink": "mailto:careers@acme-example.org"
+   }
+  ],
+  "author": {
+   "id": "ACoAAFAKE",
+   "universalName": null,
+   "publicIdentifier": "acme-labs",
+   "type": "company",
+   "name": "Acme Labs",
+   "linkedinUrl": "https://www.linkedin.com/in/acme-labs",
+   "info": "1,549 followers",
+   "website": null,
+   "websiteLabel": null,
+   "avatar": null,
+   "urn": "1",
+   "companyId": "31246479",
+   "profileId": "ACoAAFAKE"
+  },
+  "postedAt": {
+   "timestamp": 1792496567006,
+   "date": "2026-10-20T11:42:47.006Z",
+   "postedAgoShort": "4h",
+   "postedAgoText": "4 hours ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [],
+  "socialContent": {
+   "shareUrl": "https://www.linkedin.com/posts/acme-labs_hiring-activity-7000000000000000002-AbCd?utm_source=share&utm_medium=member_desktop"
+  },
+  "comments": [],
+  "header": {
+   "text": null
+  },
+  "entityId": "7000000000000000002",
+  "shareUrn": "urn:li:share:7000000000000000002",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7000000000000000002",
+  "engagement": {
+   "id": "7518275520980058112",
+   "likes": 3,
+   "comments": 0,
+   "shares": 2,
+   "reactions": [
+    {
+     "type": "LIKE",
+     "count": 3
+    }
+   ]
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+   "sortBy": "date",
+   "page": 1,
+   "search": "hiring product manager Mumbai",
+   "postedLimit": "24h"
+  },
+  "article": null
+ },
+ {
+  "type": "post",
+  "id": "7000000000000000003",
+  "linkedinUrl": "https://www.linkedin.com/posts/sam-hiring-9z8y7x_hiring-activity-7000000000000000003-AbCd?utm_source=share&utm_medium=member_desktop",
+  "content": "WE ARE HIRING | Relationship Managers\n\nOpenings in Mumbai and Ahmedabad for experienced relationship managers and team leads.\n\nInterested? Comment below or send a DM, and feel free to share with your network.\n\n#Hiring #RelationshipManager #MumbaiJobs",
+  "contentAttributes": [],
+  "author": {
+   "id": "ACoAAFAKE",
+   "universalName": null,
+   "publicIdentifier": "sam-hiring-9z8y7x",
+   "type": "profile",
+   "name": "Sam Hiring",
+   "linkedinUrl": "https://www.linkedin.com/in/sam-hiring-9z8y7x",
+   "info": "HR recruiter | Talent Acquisition",
+   "website": null,
+   "websiteLabel": null,
+   "avatar": null,
+   "urn": "1",
+   "profileId": "ACoAAFAKE"
+  },
+  "postedAt": {
+   "timestamp": 1792507289368,
+   "date": "2026-10-20T14:41:29.368Z",
+   "postedAgoShort": "1h",
+   "postedAgoText": "1 hour ago • Visible to anyone on or off LinkedIn"
+  },
+  "postImages": [],
+  "socialContent": {
+   "shareUrl": "https://www.linkedin.com/posts/sam-hiring-9z8y7x_hiring-activity-7000000000000000003-AbCd?utm_source=share&utm_medium=member_desktop"
+  },
+  "comments": [],
+  "header": {
+   "text": null
+  },
+  "entityId": "7000000000000000003",
+  "shareUrn": "urn:li:share:7000000000000000003",
+  "shareLinkedinUrl": "https://www.linkedin.com/feed/update/urn:li:share:7000000000000000003",
+  "engagement": {
+   "id": "7518320493825892352",
+   "likes": 1,
+   "comments": 0,
+   "shares": 0,
+   "reactions": [
+    {
+     "type": "LIKE",
+     "count": 1
+    }
+   ]
+  },
+  "reactions": [],
+  "reactionIds": [],
+  "commentIds": [],
+  "query": {
+   "sortBy": "date",
+   "page": 1,
+   "search": "hiring product manager Mumbai",
+   "postedLimit": "24h"
+  },
+  "article": null
+ }
+]

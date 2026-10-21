@@ -1,0 +1,14 @@
+# LinkedIn post search via Apify actor (no cookies needed).
+# Cost: $0.002/post (spike run: 10 posts = $0.02). Budget cap: 30 posts per person
+# per run -> 2 people x 30 days x 30 posts x $0.002 = $3.60/month (< $5 free credit).
+# maxPosts per query = max_posts_per_person // len(queries), min 5. Keep <= 4 queries per person.
+actor: harvestapi/linkedin-post-search
+max_posts_per_person: 30
+alex:
+  - hiring product manager Mumbai
+  - product manager opening Mumbai fintech
+sam:
+  - hiring marketing manager Mumbai
+  - founder's office hiring
+  - chief of staff hiring Bangalore
+  - brand manager hiring Pune

@@ -1,0 +1,17 @@
+# Personal documents never go into git
+profiles/*.pdf
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Local output
+out/
+.DS_Store
+.vercel
+.superpowers/

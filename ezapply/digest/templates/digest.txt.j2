@@ -1,0 +1,59 @@
+Ez Apply · {{ date_str }}
+{{ summary }}
+
+{% if posts %}
+HIRING POSTS — SEND AN EMAIL
+{% for c in posts %}
+
+{{ c.title }} ({{ c.pct }}%)
+{{ c.meta | join(' · ') }}
+{% if c.reason %}
+Why: {{ c.reason }}
+{% endif %}
+{% if c.gap %}
+Gap: {{ c.gap }}
+{% endif %}
+{% if c.resume %}
+Resume: {{ c.resume }}
+{% endif %}
+{% if c.apply_url %}
+Apply with email: {{ c.apply_url }}
+{% endif %}
+{% if c.url %}
+{{ c.view_label }}: {{ c.url }}
+{% endif %}
+{% endfor %}
+
+{% endif %}
+{% if listings %}
+TOP MATCHES
+{% for c in listings %}
+
+{{ c.title }} ({{ c.pct }}%)
+{{ c.meta | join(' · ') }}
+{% if c.reason %}
+Why: {{ c.reason }}
+{% endif %}
+{% if c.gap %}
+Gap: {{ c.gap }}
+{% endif %}
+{% if c.resume %}
+Resume: {{ c.resume }}
+{% endif %}
+{% if c.apply_url %}
+Apply with email: {{ c.apply_url }}
+{% endif %}
+{% if c.url %}
+{{ c.view_label }}: {{ c.url }}
+{% endif %}
+{% endfor %}
+
+{% endif %}
+
+--
+Sources: {{ counts or 'none' }}
+{% for name, err in source_errors %}
+Failed/skipped: {{ name }} — {{ err }}
+{% endfor %}
+{{ meta.ai_status }}
+Showing matches ≥ {{ meta.threshold }}%

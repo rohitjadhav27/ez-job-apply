@@ -1,0 +1,14 @@
+{% extends "base.html.j2" %}
+{% block title %}Drafts · Ez Apply{% endblock %}
+{% block content %}
+<h1>Your drafts</h1>
+<p class="muted" style="margin:0 0 16px">{{ profile.name }}</p>
+{% for d in drafts %}
+<a class="card" href="/drafts/{{ d.id }}">
+  <div class="row"><span class="title">{{ d.title }}</span><span class="pill pill-{{ d.status }}">{{ d.status }}</span></div>
+  <div class="muted">{{ d.company }} · {{ d.created_at.strftime('%-d %b') }}</div>
+</a>
+{% else %}
+<div class="card empty">No drafts yet. New ones appear after the next daily digest.</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ d.title }} · Ez Apply{% endblock %}
+{% block content %}
+<div class="row" style="margin-bottom:12px">
+  <div><h1>{{ d.title }}</h1><div class="muted">{{ d.company }}</div></div>
+  <span class="pill pill-{{ d.status }}">{{ d.status }}</span>
+</div>
+{% if saved %}<p class="ok" role="status">Saved.</p>{% endif %}
+<form id="f" class="card" method="post" action="/drafts/{{ d.id }}" data-account="{{ profile.email }}" data-max="{{ max_len }}">
+  <input type="hidden" name="csrf" value="{{ csrf }}">
+  <label for="to_email">To</label>
+  <input id="to_email" type="email" name="to_email" value="{{ d.to_email or '' }}" autocapitalize="off" autocorrect="off" inputmode="email">
+  <label for="subject">Subject</label>
+  <input id="subject" type="text" name="subject" value="{{ d.subject or '' }}">
+  <label for="body">Body</label>
+  <textarea id="body" name="body" rows="14">{{ d.body or '' }}</textarea>
+  <label for="resume">Resume link</label>
+  <select id="resume" name="resume">
+    {% for o in options %}<option value="{{ o.key }}" data-url="{{ o.url }}"{% if o.selected %} selected{% endif %}>{{ o.label }}</option>{% endfor %}
+    <option value="" data-url=""{% if not options|selectattr('selected')|list %} selected{% endif %}>No resume link</option>
+  </select>
+  <div id="warn" class="notice" role="alert"{% if not too_long %} hidden{% endif %}>
+    This email is too long to pre-fill in Gmail (limit about {{ max_len }} characters in the link). Shorten it, or copy the body and paste it into Gmail yourself.
+    <div><button type="button" id="copy" class="btn btn-small">Copy body</button></div>
+  </div>
+  <div class="actions">
+    <button class="btn btn-primary" type="submit" formaction="/drafts/{{ d.id }}/open">Open in Gmail</button>
+    <button class="btn" type="submit">Save</button>
+  </div>
+  <div class="links">
+    <a id="web" href="{{ web_url }}" rel="noopener">Open in Gmail web</a>
+    {% if job_url %}<a href="{{ job_url }}" rel="noopener noreferrer" target="_blank">View original job</a>{% endif %}
+    <a href="/">Back to drafts</a>
+  </div>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="/static/draft.js" defer></script>
+{% endblock %}

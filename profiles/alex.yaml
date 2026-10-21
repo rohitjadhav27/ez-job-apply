@@ -1,0 +1,39 @@
+id: alex
+name: Alex Mehta
+email: alex.mehta@example.com
+phone: "+91-00000-00001"
+cities: [Mumbai]
+allow_remote: false
+experience_years: {min: 3, max: 8}
+target_titles:
+  - product manager
+  - senior product manager
+  - fintech product manager
+  - payments product manager
+  - technical product manager
+  - api product manager
+  - platform product manager
+  - ai product manager
+  - product owner
+adjacent_titles:
+  - associate product manager
+  - product lead
+  - program manager
+  - business analyst
+  - product analyst
+  - product operations manager
+domain_keywords: [fintech, payments, banking, wealth, cross-border, API, AI]
+exclude_keywords: [intern, internship, sales executive, BPO, telecaller]
+blocked_companies: []
+resumes:
+  default:
+    drive_url: "https://example.com/resumes/alex-mehta.pdf"
+    use_for: "all product roles"
+resume_text_file: profiles/alex.resume.md
+search_queries:
+  - product manager
+  - senior product manager
+  - fintech product manager
+  - technical product manager
+  - AI product manager
+  - product owner

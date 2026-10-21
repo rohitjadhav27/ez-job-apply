@@ -1,0 +1,43 @@
+id: sam
+name: Sam Kapoor
+email: sam.kapoor@example.com
+phone: "+91-00000-00002"
+cities: [Mumbai, Pune, Bangalore]
+allow_remote: false
+experience_years: {min: 4, max: 10}
+target_titles:
+  - marketing manager
+  - founder's office
+  - brand manager
+  - growth marketing manager
+  - digital marketing manager
+  - chief of staff
+  - client manager
+  - account manager
+adjacent_titles:
+  - marketing lead
+  - brand strategist
+  - performance marketing manager
+  - content marketing manager
+  - strategy manager
+  - business operations manager
+  - client servicing manager
+domain_keywords: [D2C, consumer, brand, startup, agency, e-commerce]
+exclude_keywords: [intern, internship, sales executive, BPO, telecaller]
+blocked_companies: []
+resumes:
+  resume:
+    drive_url: "https://example.com/resumes/sam-kapoor-resume.pdf"
+    use_for: "marketing, brand, growth"
+  cv:
+    drive_url: "https://example.com/resumes/sam-kapoor-cv.pdf"
+    use_for: "founder's office, chief of staff, account management"
+resume_text_file: profiles/sam.resume.md
+search_queries:
+  - marketing manager
+  - founder's office
+  - brand manager
+  - growth marketing manager
+  - digital marketing manager
+  - chief of staff
+  - account manager

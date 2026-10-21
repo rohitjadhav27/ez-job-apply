@@ -1,0 +1,61 @@
+:root {
+  --bg: #f4f5f7; --card: #ffffff; --text: #1f2328; --muted: #59636e; --border: #e3e5e8;
+  --field-border: #c9ccd1; --btn-bg: #1f2328; --btn-text: #ffffff; --link: #1f2328;
+  --new-bg: #e8f0fe; --new-fg: #1a4fa0; --edited-bg: #fff4d6; --edited-fg: #8a5a00;
+  --opened-bg: #e2f5e7; --opened-fg: #1a6b35; --warn-bg: #fff4d6; --warn-fg: #6b4700; --err: #b42318;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a; --card: #1d2025; --text: #e8eaed; --muted: #9aa3ad; --border: #2f343b;
+    --field-border: #454b54; --btn-bg: #e8eaed; --btn-text: #14161a; --link: #e8eaed;
+    --new-bg: #1c2f50; --new-fg: #a9c7ff; --edited-bg: #4a3a10; --edited-fg: #f5d27a;
+    --opened-bg: #173a24; --opened-fg: #8fd9a8; --warn-bg: #4a3a10; --warn-fg: #f5d27a; --err: #ff8a80;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text); line-height: 1.5; font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 16px; }
+header.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 4px 0 16px; }
+header.top a.brand { font-size: 20px; font-weight: 700; color: var(--text); text-decoration: none; }
+header.top form { margin: 0; }
+h1 { font-size: 20px; line-height: 1.3; margin: 0 0 4px; }
+.muted { color: var(--muted); font-size: 14px; }
+a { color: var(--link); }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 0 0 12px; }
+a.card { display: block; text-decoration: none; color: var(--text); }
+a.card:active, a.card:hover { border-color: var(--field-border); }
+.row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.row .title { font-weight: 700; }
+.pill { display: inline-block; font-size: 12px; font-weight: 700; line-height: 18px; padding: 2px 10px; border-radius: 12px; white-space: nowrap; }
+.pill-new { background: var(--new-bg); color: var(--new-fg); }
+.pill-edited { background: var(--edited-bg); color: var(--edited-fg); }
+.pill-opened { background: var(--opened-bg); color: var(--opened-fg); }
+label { display: block; font-size: 13px; font-weight: 700; color: var(--muted); margin: 16px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+label:first-child { margin-top: 0; }
+input[type=text], input[type=email], input[type=password], select, textarea {
+  width: 100%; min-height: 44px; padding: 10px 12px; font: inherit; font-size: 16px; color: var(--text);
+  background: var(--card); border: 1px solid var(--field-border); border-radius: 6px;
+}
+textarea { resize: vertical; line-height: 1.5; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--text); outline-offset: 1px; }
+.btn {
+  display: flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 10px 18px;
+  font: inherit; font-weight: 700; font-size: 16px; text-decoration: none; cursor: pointer;
+  border-radius: 6px; border: 1px solid var(--field-border); background: var(--card); color: var(--text);
+}
+.btn-primary { background: var(--btn-bg); color: var(--btn-text); border-color: var(--btn-bg); }
+.btn-small { width: auto; min-height: 44px; padding: 8px 14px; font-size: 14px; }
+.actions { display: grid; gap: 10px; margin-top: 20px; }
+.links { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-top: 16px; }
+.links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 15px; }
+.notice { background: var(--warn-bg); color: var(--warn-fg); border-radius: 6px; padding: 12px; margin-top: 12px; font-size: 14px; }
+.notice[hidden] { display: none; }
+.notice button { margin-top: 8px; }
+.ok { color: var(--opened-fg); font-size: 14px; margin: 0 0 12px; }
+.error { color: var(--err); font-size: 14px; margin: 0 0 12px; }
+.empty { text-align: center; color: var(--muted); padding: 32px 16px; }
+@media (min-width: 560px) { .actions { grid-template-columns: 1fr 1fr; } .actions .btn-primary { grid-column: 1 / -1; } }

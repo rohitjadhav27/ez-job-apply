@@ -1,0 +1,32 @@
+# Public career boards, verified 2026-10-20 (HTTP 200 and >=1 job in Mumbai/Pune/Bangalore).
+# Candidates probed: ~190 slugs; 27 kept. Add a company by checking its board slug returns 200.
+greenhouse:
+  - groww
+  - druva
+  - glance
+  - inmobi
+  - truefoundry
+  - hackerrank
+  - zinnov
+  - stripe
+  - zscaler
+  - gitlab
+  - databricks
+  - okta
+  - datadog
+  - elastic
+  - mongodb
+  - toast
+  - thoughtworks
+  - airbnb
+lever:
+  - meesho
+  - paytm
+  - zeta
+  - mindtickle
+ashby:
+  - sarvam
+  - bolna
+  - ema
+  - composio
+  - openai

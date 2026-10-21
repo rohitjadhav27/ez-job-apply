@@ -1,0 +1,45 @@
+[project]
+name = "ezapply"
+version = "0.1.0"
+description = "Daily job finder and ranker with emailed digests"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "bcrypt>=5.0.0",
+    "fastapi>=0.153.0",
+    "itsdangerous>=2.2.0",
+    "jinja2>=3.1.6",
+    "psycopg[binary,pool]>=3.3.6",
+    "python-multipart>=0.0.32",
+    "pyyaml>=6.0.3",
+]
+
+[project.optional-dependencies]
+pipeline = [
+    "apify-client>=3.3.0",
+    "fastembed>=0.9.0",
+    "httpx>=0.28.1",
+    "openai>=3.35.1",
+    "python-jobspy>=1.4.0",
+    "rapidfuzz>=3.14.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ezapply"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.uv]
+# onnxruntime >=1.24 ships no macOS x86_64 wheels (local dev machine is Intel)
+constraint-dependencies = ["onnxruntime<1.24"]
+
+[dependency-groups]
+dev = [
+    "pypdf>=6.21.1",
+    "pytest>=9.1.1",
+    "respx>=0.23.1",
+]

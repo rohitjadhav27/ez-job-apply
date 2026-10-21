@@ -1,0 +1,11 @@
+.env
+.env.*
+profiles/*.md
+profiles/*.pdf
+tests
+docs
+.superpowers
+.venv
+pyproject.toml
+uv.lock
+.python-version
